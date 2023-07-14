@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(ros_package_template)
+project(hexapod)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
