@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
+        - /RobotModel1/Mass Properties1
         - /TF1
       Splitter Ratio: 0.5
     Tree Height: 549
@@ -181,6 +182,36 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        servo13:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        servo14:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        servo15:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        servo16:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        servo17:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        servo18:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         servo2:
           Alpha: 1
           Show Axes: false
@@ -285,6 +316,18 @@ Visualization Manager:
           Value: true
         servo12:
           Value: true
+        servo13:
+          Value: true
+        servo14:
+          Value: true
+        servo15:
+          Value: true
+        servo16:
+          Value: true
+        servo17:
+          Value: true
+        servo18:
+          Value: true
         servo2:
           Value: true
         servo3:
@@ -322,32 +365,38 @@ Visualization Manager:
               coxa1:
                 servo7:
                   femur1:
-                    {}
+                    servo13:
+                      {}
             servo2:
               coxa2:
                 servo8:
                   femur2:
-                    {}
+                    servo14:
+                      {}
             servo3:
               coxa3:
                 servo9:
                   femur3:
-                    {}
+                    servo15:
+                      {}
             servo4:
               coxa4:
                 servo10:
                   femur4:
-                    {}
+                    servo16:
+                      {}
             servo5:
               coxa5:
                 servo11:
                   femur5:
-                    {}
+                    servo17:
+                      {}
             servo6:
               coxa6:
                 servo12:
                   femur6:
-                    {}
+                    servo18:
+                      {}
             top_cover:
               phone:
                 {}
@@ -357,7 +406,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Fixed Frame: base_link
-    Frame Rate: 30
+    Frame Rate: 60
   Name: root
   Tools:
     - Class: rviz_default_plugins/Interact
@@ -399,7 +448,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 0.8922818899154663
+      Distance: 0.7357979416847229
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -414,10 +463,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6953991651535034
+      Pitch: 0.5603996515274048
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.5253952741622925
+      Yaw: 1.5353946685791016
     Saved: ~
 Window Geometry:
   Displays:

@@ -78,7 +78,7 @@
                 <box size="0.0405 0.0395 0.02"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.055" x="0.057" y="0.075" z="0.0075">
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
             <origin xyz="0.057 0.075 0.0075" rpy="${pi/2} 0.0 ${pi/4}"/>
         </xacro:inertial_box>
     </link>
@@ -103,7 +103,7 @@
                 <box size="0.0405 0.0395 0.02"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.055" x="0.07" y="0" z="0.0075">
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
             <origin xyz="0.07 0 0.0075" rpy="${pi/2} 0.0 0"/>
         </xacro:inertial_box>
     </link>
@@ -128,7 +128,7 @@
                 <box size="0.0405 0.0395 0.02"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.055" x="0.055" y="-0.078" z="0.0075">
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
             <origin xyz="0.055 -0.078 0.0075" rpy="${pi/2} 0.0 -${pi/4}"/>
         </xacro:inertial_box>
     </link>
@@ -153,7 +153,7 @@
                 <box size="0.0405 0.0395 0.02"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.055" x="-0.055" y="-0.078" z="0.0075">
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
             <origin xyz="-0.055 -0.078 0.0075" rpy="${pi/2} 0.0 ${pi/4}"/>
         </xacro:inertial_box>
     </link>
@@ -178,7 +178,7 @@
                 <box size="0.0405 0.0395 0.02"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.055" x="-0.07" y="0.0" z="0.0075">
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
             <origin xyz="-0.07 0 0.0075" rpy="${pi/2} 0.0 0"/>
         </xacro:inertial_box>
     </link>
@@ -203,8 +203,8 @@
                 <box size="0.0405 0.0395 0.02"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.055" x="-0.057" y="0.075" z="0.0075">
-            <origin xyz="-0.057 0.075 0.0075" rpy="${pi/2} 0.0 -${pi/4}"/>
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
+            <origin xyz="-0.057 0.075 0.0075"/>
         </xacro:inertial_box>
     </link>
 
@@ -228,6 +228,15 @@
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+            <origin xyz="0 0 -0.0025"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_coxa.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="0.025 0 0.0025" rpy="0 0 0"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="servo7_joint" type="fixed">
@@ -250,7 +259,7 @@
                 <box size="0.0405 0.0395 0.02"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.055" x="0.045" y="0" z="0.0095">
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
             <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
@@ -268,6 +277,58 @@
             <origin xyz="-0.08 0 -0.0125"/>
             <geometry>
                 <mesh filename="file://$(find hexapod)/meshes/right_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+             <origin xyz="-0.08 0 -0.0125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.08 0 -0.0125"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="servo13_joint" type="revolute">
+        <parent link="femur1"/>
+        <child link="servo13"/>
+        <origin xyz="-0.0775 0 0"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="servo13">
+        <visual>
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="tibia1_joint" type="fixed">
+        <parent link="servo13"/>
+        <child link="tibia1"/>
+        <origin xyz="0 0 0" rpy="-${pi/2} 0 -0.85"/>
+    </joint>
+
+    <link name="tibia1">
+        <visual>
+            <origin xyz="-0.055 0 0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_tibia.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -291,6 +352,15 @@
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+            <origin xyz="0 0 -0.0025"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_coxa.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="0.025 0 0.0025" rpy="0 0 0"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="servo8_joint" type="fixed">
@@ -313,7 +383,7 @@
                 <box size="0.0405 0.0395 0.02"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.055" x="0.045" y="0" z="0.0095">
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
             <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
@@ -331,6 +401,58 @@
             <origin xyz="-0.08 0 -0.0125"/>
             <geometry>
                 <mesh filename="file://$(find hexapod)/meshes/right_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+             <origin xyz="-0.08 0 -0.0125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.08 0 -0.0125"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="servo14_joint" type="revolute">
+        <parent link="femur2"/>
+        <child link="servo14"/>
+        <origin xyz="-0.0775 0 0"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="servo14">
+        <visual>
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="tibia2_joint" type="fixed">
+        <parent link="servo14"/>
+        <child link="tibia2"/>
+        <origin xyz="0 0 0" rpy="-${pi/2} 0 -0.85"/>
+    </joint>
+
+    <link name="tibia2">
+        <visual>
+            <origin xyz="-0.055 0 0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_tibia.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -354,6 +476,15 @@
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+            <origin xyz="0 0 -0.0025"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_coxa.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="0 0 0.0025" rpy="0 0 0"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="servo9_joint" type="fixed">
@@ -376,7 +507,7 @@
                 <box size="0.0405 0.0395 0.02"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.055" x="0.045" y="0" z="0.0095">
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
             <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
@@ -397,6 +528,58 @@
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+             <origin xyz="-0.08 0 -0.0125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.08 0 -0.0125"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="servo15_joint" type="revolute">
+        <parent link="femur3"/>
+        <child link="servo15"/>
+        <origin xyz="-0.0775 0 0"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="servo15">
+        <visual>
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="tibia3_joint" type="fixed">
+        <parent link="servo15"/>
+        <child link="tibia3"/>
+        <origin xyz="0 0 0" rpy="-${pi/2} 0 -0.85"/>
+    </joint>
+
+    <link name="tibia3">
+        <visual>
+            <origin xyz="-0.055 0 0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_tibia.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
     </link>
 
     <!-- LEG 4 (LB) -->
@@ -413,10 +596,19 @@
         <visual>
             <origin xyz="0 0 -0.0025"/>
             <geometry>
-                <mesh filename="file://$(find hexapod)/meshes/right_coxa.stl" scale="0.001 0.001 0.001"/>
+                <mesh filename="file://$(find hexapod)/meshes/left_coxa.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+            <origin xyz="0 0 -0.0025"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_coxa.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="0 0 0.0025" rpy="0 0 0"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="servo10_joint" type="fixed">
@@ -439,7 +631,7 @@
                 <box size="0.0405 0.0395 0.02"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.055" x="0.045" y="0" z="0.0095">
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
             <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
@@ -457,6 +649,58 @@
             <origin xyz="-0.08 0 0.0125"/>
             <geometry>
                 <mesh filename="file://$(find hexapod)/meshes/left_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+             <origin xyz="-0.08 0 -0.0125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.08 0 -0.0125"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="servo16_joint" type="revolute">
+        <parent link="femur4"/>
+        <child link="servo16"/>
+        <origin xyz="-0.0775 0 0"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="servo16">
+        <visual>
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="tibia4_joint" type="fixed">
+        <parent link="servo16"/>
+        <child link="tibia4"/>
+        <origin xyz="0 0 0" rpy="-${pi/2} 0 -0.85"/>
+    </joint>
+
+    <link name="tibia4">
+        <visual>
+            <origin xyz="-0.055 0 0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_tibia.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -480,6 +724,15 @@
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+            <origin xyz="0 0 -0.0025"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_coxa.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="0 0 0.0025" rpy="0 0 0"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="servo11_joint" type="fixed">
@@ -502,7 +755,7 @@
                 <box size="0.0405 0.0395 0.02"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.055" x="0.045" y="0" z="0.0095">
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
             <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
@@ -520,6 +773,58 @@
             <origin xyz="-0.08 0 0.0125"/>
             <geometry>
                 <mesh filename="file://$(find hexapod)/meshes/left_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+             <origin xyz="-0.08 0 -0.0125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.08 0 -0.0125"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="servo17_joint" type="revolute">
+        <parent link="femur5"/>
+        <child link="servo17"/>
+        <origin xyz="-0.0775 0 0"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="servo17">
+        <visual>
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="tibia5_joint" type="fixed">
+        <parent link="servo17"/>
+        <child link="tibia5"/>
+        <origin xyz="0 0 0" rpy="-${pi/2} 0 -0.85"/>
+    </joint>
+
+    <link name="tibia5">
+        <visual>
+            <origin xyz="-0.055 0 0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_tibia.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -543,6 +848,15 @@
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+            <origin xyz="0 0 -0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_coxa.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_box>
     </link>
 
     <joint name="servo12_joint" type="fixed">
@@ -565,7 +879,7 @@
                 <box size="0.0405 0.0395 0.02"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.055" x="0.045" y="0" z="0.0095">
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
             <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
@@ -583,6 +897,58 @@
             <origin xyz="-0.08 0 0.0125"/>
             <geometry>
                 <mesh filename="file://$(find hexapod)/meshes/left_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+             <origin xyz="-0.08 0 -0.0125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.08 0 -0.0125"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="servo18_joint" type="revolute">
+        <parent link="femur6"/>
+        <child link="servo18"/>
+        <origin xyz="-0.0775 0 0"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="servo18">
+        <visual>
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.055" x="0.0405" y="0.0395" z="0.02">
+            <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="tibia6_joint" type="fixed">
+        <parent link="servo18"/>
+        <child link="tibia6"/>
+        <origin xyz="0 0 0" rpy="-${pi/2} 0 -0.85"/>
+    </joint>
+
+    <link name="tibia6">
+        <visual>
+            <origin xyz="-0.055 0 0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_tibia.stl" scale="0.001 0.001 0.001"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -610,7 +976,7 @@
                 <mesh filename="file://$(find hexapod)/meshes/top_cover.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.05" x="0" y="0" z="0.014">
+        <xacro:inertial_box mass="0.05" x="0" y="0" z="0">
             <origin xyz="0 0 0.014"/>
         </xacro:inertial_box>
     </link>
@@ -635,7 +1001,7 @@
                 <box size="0.0699 0.1422 0.0079"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.15" x="0" y="0" z="0.024">
+        <xacro:inertial_box mass="0.15" x="0.0699" y="0.1422" z="0.0079">
             <origin xyz="0 0 .024"/>
         </xacro:inertial_box>
     </link>
@@ -662,7 +1028,7 @@
                 <mesh filename="file://$(find hexapod)/meshes/bottom_cover.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.045" x="0" y="0" z="0.0175">
+        <xacro:inertial_box mass="0.045" x="0" y="0" z="0">
             <origin xyz="0 0 .0175"/>
         </xacro:inertial_box>
     </link>
@@ -687,7 +1053,7 @@
                 <mesh filename="file://$(find hexapod)/meshes/battery_bar.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.004" x="0" y="0" z="0.0175">
+        <xacro:inertial_box mass="0.004" x="0" y="0" z="0">
             <origin xyz="0 0 .0175"/>
         </xacro:inertial_box>
     </link>
@@ -712,7 +1078,7 @@
                 <mesh filename="file://$(find hexapod)/meshes/battery_bar.stl" scale="0.001 0.001 0.001"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.004" x="0" y="-0.075" z="0.0175">
+        <xacro:inertial_box mass="0.004" x="0" y="0" z="0">
             <origin xyz="0 -0.075 .0175"/>
         </xacro:inertial_box>
     </link>
@@ -737,7 +1103,7 @@
                 <box size="0.047 0.138 0.025"/>
             </geometry>
         </collision>
-        <xacro:inertial_box mass="0.25" x="0" y="0" z="-0.0225">
+        <xacro:inertial_box mass="0.25" x="0.047" y="0.138" z="-0.025">
             <origin xyz="0 0 -0.0225"/>
         </xacro:inertial_box>
     </link>
