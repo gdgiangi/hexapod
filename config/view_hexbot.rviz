@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
         - /RobotModel1
+        - /TF1
       Splitter Ratio: 0.5
     Tree Height: 549
   - Class: rviz_common/Selection
@@ -90,6 +91,11 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        coxa1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         frame:
           Alpha: 1
           Show Axes: false
@@ -143,6 +149,74 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        base_link:
+          Value: true
+        battery:
+          Value: true
+        batterybar1:
+          Value: true
+        batterybar2:
+          Value: true
+        bottom_cover:
+          Value: true
+        coxa1:
+          Value: true
+        frame:
+          Value: true
+        phone:
+          Value: true
+        servo1:
+          Value: true
+        servo2:
+          Value: true
+        servo3:
+          Value: true
+        servo4:
+          Value: true
+        servo5:
+          Value: true
+        servo6:
+          Value: true
+        top_cover:
+          Value: true
+      Marker Scale: 0.15000000596046448
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        base_link:
+          frame:
+            bottom_cover:
+              battery:
+                {}
+              batterybar1:
+                {}
+              batterybar2:
+                {}
+            servo1:
+              coxa1:
+                {}
+            servo2:
+              {}
+            servo3:
+              {}
+            servo4:
+              {}
+            servo5:
+              {}
+            servo6:
+              {}
+            top_cover:
+              phone:
+                {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -189,7 +263,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 0.7086148858070374
+      Distance: 0.28959357738494873
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -204,10 +278,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4353991150856018
+      Pitch: 0.4653989374637604
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.8203961849212646
+      Yaw: 1.5303964614868164
     Saved: ~
 Window Geometry:
   Displays:
@@ -225,5 +299,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1200
-  X: 74
+  X: 75
   Y: 60

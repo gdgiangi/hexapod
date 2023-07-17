@@ -208,6 +208,143 @@
         </xacro:inertial_box>
     </link>
 
+    <!-- LEG SERVOS (COXA) -->
+
+    <joint name="coxa1_joint" type="revolute">
+        <parent link="servo1"/>
+        <child link="coxa1"/>
+        <origin xyz="0.06 0.085 -0.0025" rpy="0 0 ${pi/4}"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="coxa1">
+        <visual>
+            <origin xyz="0 0 -0.0025"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_coxa.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="servo7_joint" type="fixed">
+        <parent link="coxa1"/>
+        <child link="servo7"/>
+        <origin xyz="0 0 0"/>
+    </joint>
+
+    <link name="servo7">
+        <visual>
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.055" x="0.045" y="0" z="0.0095">
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="coxa2_joint" type="revolute">
+        <parent link="servo2"/>
+        <child link="coxa2"/>
+        <origin xyz="0.08 0 -0.0025"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="coxa2">
+        <visual>
+            <origin xyz="0 0 -0.0025"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_coxa.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="coxa3_joint" type="revolute">
+        <parent link="servo3"/>
+        <child link="coxa3"/>
+        <origin xyz="0.06 -0.085 -0.0025" rpy="0 0 -${pi/4}"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="coxa3">
+        <visual>
+            <origin xyz="0 0 -0.0025"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_coxa.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="coxa4_joint" type="revolute">
+        <parent link="servo4"/>
+        <child link="coxa4"/>
+        <origin xyz="-0.06 -0.085 -0.0025" rpy="0 0 -${(3*pi)/4}"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="coxa4">
+        <visual>
+            <origin xyz="0 0 -0.0025"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_coxa.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="coxa5_joint" type="revolute">
+        <parent link="servo5"/>
+        <child link="coxa5"/>
+        <origin xyz="-0.08 0 -0.0025" rpy="0 0 ${pi}"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="coxa5">
+        <visual>
+            <origin xyz="0 0 -0.0025"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_coxa.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <joint name="coxa6_joint" type="revolute">
+        <parent link="servo6"/>
+        <child link="coxa6"/>
+        <origin xyz="-0.06 0.085 0" rpy="0 0 ${(3*pi)/4}"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="coxa6">
+        <visual>
+            <origin xyz="0 0 -0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_coxa.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <!-- LEG SERVOS (FEMUR) -->
+
     <!-- TOP -->
 
     <joint name="top_cover_joint" type="fixed">
