@@ -96,6 +96,61 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        coxa2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        coxa3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        coxa4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        coxa5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        coxa6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        femur1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        femur2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        femur3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        femur4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        femur5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        femur6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         frame:
           Alpha: 1
           Show Axes: false
@@ -107,6 +162,21 @@ Visualization Manager:
           Show Trail: false
           Value: true
         servo1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        servo10:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        servo11:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        servo12:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -132,6 +202,21 @@ Visualization Manager:
           Show Trail: false
           Value: true
         servo6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        servo7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        servo8:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        servo9:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -166,11 +251,39 @@ Visualization Manager:
           Value: true
         coxa1:
           Value: true
+        coxa2:
+          Value: true
+        coxa3:
+          Value: true
+        coxa4:
+          Value: true
+        coxa5:
+          Value: true
+        coxa6:
+          Value: true
+        femur1:
+          Value: true
+        femur2:
+          Value: true
+        femur3:
+          Value: true
+        femur4:
+          Value: true
+        femur5:
+          Value: true
+        femur6:
+          Value: true
         frame:
           Value: true
         phone:
           Value: true
         servo1:
+          Value: true
+        servo10:
+          Value: true
+        servo11:
+          Value: true
+        servo12:
           Value: true
         servo2:
           Value: true
@@ -181,6 +294,12 @@ Visualization Manager:
         servo5:
           Value: true
         servo6:
+          Value: true
+        servo7:
+          Value: true
+        servo8:
+          Value: true
+        servo9:
           Value: true
         top_cover:
           Value: true
@@ -201,17 +320,34 @@ Visualization Manager:
                 {}
             servo1:
               coxa1:
-                {}
+                servo7:
+                  femur1:
+                    {}
             servo2:
-              {}
+              coxa2:
+                servo8:
+                  femur2:
+                    {}
             servo3:
-              {}
+              coxa3:
+                servo9:
+                  femur3:
+                    {}
             servo4:
-              {}
+              coxa4:
+                servo10:
+                  femur4:
+                    {}
             servo5:
-              {}
+              coxa5:
+                servo11:
+                  femur5:
+                    {}
             servo6:
-              {}
+              coxa6:
+                servo12:
+                  femur6:
+                    {}
             top_cover:
               phone:
                 {}
@@ -263,25 +399,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 0.28959357738494873
+      Distance: 0.8922818899154663
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.008380739018321037
-        Y: -0.008234407752752304
-        Z: 0.02347494289278984
+        X: -0.001745226327329874
+        Y: 0.005154808517545462
+        Z: 0.006048854440450668
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4653989374637604
+      Pitch: 0.6953991651535034
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.5303964614868164
+      Yaw: 1.5253952741622925
     Saved: ~
 Window Geometry:
   Displays:

@@ -208,7 +208,9 @@
         </xacro:inertial_box>
     </link>
 
-    <!-- LEG SERVOS (COXA) -->
+    <!-- LEG SERVOS -->
+
+    <!-- LEG 1 (RF) -->
 
     <joint name="coxa1_joint" type="revolute">
         <parent link="servo1"/>
@@ -253,6 +255,26 @@
         </xacro:inertial_box>
     </link>
 
+    <joint name="femur1_joint" type="revolute">
+        <parent link="servo7"/>
+        <child link="femur1"/>
+        <origin xyz="0.045 0 0.02" rpy="${pi/2} 0 ${pi}"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="femur1">
+        <visual>
+            <origin xyz="-0.08 0 -0.0125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <!-- LEG 2 (RM) -->
+
     <joint name="coxa2_joint" type="revolute">
         <parent link="servo2"/>
         <child link="coxa2"/>
@@ -270,6 +292,51 @@
             <material name="white"/>
         </visual>
     </link>
+
+    <joint name="servo8_joint" type="fixed">
+        <parent link="coxa2"/>
+        <child link="servo8"/>
+        <origin xyz="0 0 0"/>
+    </joint>
+
+    <link name="servo8">
+        <visual>
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.055" x="0.045" y="0" z="0.0095">
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="femur2_joint" type="revolute">
+        <parent link="servo8"/>
+        <child link="femur2"/>
+        <origin xyz="0.045 0 0.02" rpy="${pi/2} 0 ${pi}"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="femur2">
+        <visual>
+            <origin xyz="-0.08 0 -0.0125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <!-- LEG 3 (RB) -->
 
     <joint name="coxa3_joint" type="revolute">
         <parent link="servo3"/>
@@ -289,6 +356,51 @@
         </visual>
     </link>
 
+    <joint name="servo9_joint" type="fixed">
+        <parent link="coxa3"/>
+        <child link="servo9"/>
+        <origin xyz="0 0 0"/>
+    </joint>
+
+    <link name="servo9">
+        <visual>
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.055" x="0.045" y="0" z="0.0095">
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="femur3_joint" type="revolute">
+        <parent link="servo9"/>
+        <child link="femur3"/>
+        <origin xyz="0.045 0 0.02" rpy="${pi/2} 0 ${pi}"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="femur3">
+        <visual>
+            <origin xyz="-0.08 0 -0.0125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <!-- LEG 4 (LB) -->
+
     <joint name="coxa4_joint" type="revolute">
         <parent link="servo4"/>
         <child link="coxa4"/>
@@ -306,6 +418,51 @@
             <material name="white"/>
         </visual>
     </link>
+
+    <joint name="servo10_joint" type="fixed">
+        <parent link="coxa4"/>
+        <child link="servo10"/>
+        <origin xyz="0 0 0"/>
+    </joint>
+
+    <link name="servo10">
+        <visual>
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.055" x="0.045" y="0" z="0.0095">
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="femur4_joint" type="revolute">
+        <parent link="servo10"/>
+        <child link="femur4"/>
+        <origin xyz="0.045 0 0.02" rpy="${pi/2} 0 ${pi}"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="femur4">
+        <visual>
+            <origin xyz="-0.08 0 0.0125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <!-- LEG 5 (LM) -->
 
     <joint name="coxa5_joint" type="revolute">
         <parent link="servo5"/>
@@ -325,6 +482,51 @@
         </visual>
     </link>
 
+    <joint name="servo11_joint" type="fixed">
+        <parent link="coxa5"/>
+        <child link="servo11"/>
+        <origin xyz="0 0 0"/>
+    </joint>
+
+    <link name="servo11">
+        <visual>
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.055" x="0.045" y="0" z="0.0095">
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="femur5_joint" type="revolute">
+        <parent link="servo11"/>
+        <child link="femur5"/>
+        <origin xyz="0.045 0 0.02" rpy="${pi/2} 0 ${pi}"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="femur5">
+        <visual>
+            <origin xyz="-0.08 0 0.0125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
+
+    <!-- LEG 6 (LF) -->
+
     <joint name="coxa6_joint" type="revolute">
         <parent link="servo6"/>
         <child link="coxa6"/>
@@ -343,7 +545,48 @@
         </visual>
     </link>
 
-    <!-- LEG SERVOS (FEMUR) -->
+    <joint name="servo12_joint" type="fixed">
+        <parent link="coxa6"/>
+        <child link="servo12"/>
+        <origin xyz="0 0 0"/>
+    </joint>
+
+    <link name="servo12">
+        <visual>
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+            <geometry>
+                <box size="0.0405 0.0395 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.055" x="0.045" y="0" z="0.0095">
+            <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="femur6_joint" type="revolute">
+        <parent link="servo12"/>
+        <child link="femur6"/>
+        <origin xyz="0.045 0 0.02" rpy="${pi/2} 0 ${pi}"/>
+        <axis xyz="0 0 1" />
+        <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
+    </joint>
+
+    <link name="femur6">
+        <visual>
+            <origin xyz="-0.08 0 0.0125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_femur.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>
 
     <!-- TOP -->
 
