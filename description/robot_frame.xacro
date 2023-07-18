@@ -55,6 +55,9 @@
             <origin xyz="0 0 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="frame">
+        <material>Gazebo/White </material>
+    </gazebo>
 
     <!-- FRAME SERVOS -->
 
@@ -82,6 +85,9 @@
             <origin xyz="0.057 0.075 0.0075" rpy="${pi/2} 0.0 ${pi/4}"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo1">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="servo2_joint" type="fixed">
         <parent link="frame"/>
@@ -107,6 +113,9 @@
             <origin xyz="0.07 0 0.0075" rpy="${pi/2} 0.0 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo2">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="servo3_joint" type="fixed">
         <parent link="frame"/>
@@ -132,6 +141,9 @@
             <origin xyz="0.055 -0.078 0.0075" rpy="${pi/2} 0.0 -${pi/4}"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo3">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="servo4_joint" type="fixed">
         <parent link="frame"/>
@@ -157,6 +169,9 @@
             <origin xyz="-0.055 -0.078 0.0075" rpy="${pi/2} 0.0 ${pi/4}"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo4">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="servo5_joint" type="fixed">
         <parent link="frame"/>
@@ -182,6 +197,9 @@
             <origin xyz="-0.07 0 0.0075" rpy="${pi/2} 0.0 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo5">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="servo6_joint" type="fixed">
         <parent link="frame"/>
@@ -207,6 +225,9 @@
             <origin xyz="-0.057 0.075 0.0075"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo6">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <!-- LEG SERVOS -->
 
@@ -238,6 +259,9 @@
             <origin xyz="0.025 0 0.0025" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="coxa1">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="servo7_joint" type="fixed">
         <parent link="coxa1"/>
@@ -263,6 +287,9 @@
             <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo7">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="femur1_joint" type="revolute">
         <parent link="servo7"/>
@@ -290,6 +317,9 @@
              <origin xyz="-0.08 0 -0.0125"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="femur1">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="servo13_joint" type="revolute">
         <parent link="femur1"/>
@@ -317,6 +347,9 @@
             <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo13">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="tibia1_joint" type="fixed">
         <parent link="servo13"/>
@@ -342,6 +375,9 @@
              <origin xyz="-0.055 0 0.005"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="tibia1">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="shield1_joint" type="fixed">
         <parent link="tibia1"/>
@@ -367,6 +403,9 @@
              <origin xyz="-0.055 0 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="shield1">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <joint name="sensor1_joint" type="fixed">
         <parent link="tibia1"/>
@@ -392,6 +431,9 @@
              <origin xyz="-0.0425 0.005 -0.125"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="sensor1">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <!-- LEG 2 (RM) -->
 
@@ -421,6 +463,9 @@
             <origin xyz="0.025 0 0.0025" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="coxa2">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="servo8_joint" type="fixed">
         <parent link="coxa2"/>
@@ -446,6 +491,9 @@
             <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo8">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="femur2_joint" type="revolute">
         <parent link="servo8"/>
@@ -473,6 +521,9 @@
              <origin xyz="-0.08 0 -0.0125"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="femur2">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="servo14_joint" type="revolute">
         <parent link="femur2"/>
@@ -500,6 +551,9 @@
             <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo14">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="tibia2_joint" type="fixed">
         <parent link="servo14"/>
@@ -525,6 +579,9 @@
              <origin xyz="-0.055 0 0.005"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="tibia2">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="shield2_joint" type="fixed">
         <parent link="tibia2"/>
@@ -550,6 +607,9 @@
             <origin xyz="-0.055 0 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="shield2">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <joint name="sensor2_joint" type="fixed">
         <parent link="tibia2"/>
@@ -575,6 +635,9 @@
              <origin xyz="-0.0425 0.005 -0.125"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="sensor2">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <!-- LEG 3 (RB) -->
 
@@ -604,6 +667,9 @@
             <origin xyz="0 0 0.0025" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="coxa3">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="servo9_joint" type="fixed">
         <parent link="coxa3"/>
@@ -629,6 +695,9 @@
             <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo9">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="femur3_joint" type="revolute">
         <parent link="servo9"/>
@@ -656,6 +725,9 @@
              <origin xyz="-0.08 0 -0.0125"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="femur3">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="servo15_joint" type="revolute">
         <parent link="femur3"/>
@@ -683,6 +755,9 @@
             <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo15">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="tibia3_joint" type="fixed">
         <parent link="servo15"/>
@@ -708,6 +783,9 @@
             <origin xyz="-0.055 0 0.005"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="tibia3">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="shield3_joint" type="fixed">
         <parent link="tibia3"/>
@@ -733,6 +811,9 @@
             <origin xyz="-0.055 0 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="shield3">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <joint name="sensor3_joint" type="fixed">
         <parent link="tibia3"/>
@@ -758,6 +839,9 @@
              <origin xyz="-0.0425 0.005 -0.125"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="sensor3">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <!-- LEG 4 (LB) -->
 
@@ -787,6 +871,9 @@
             <origin xyz="0 0 0.0025" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="coxa4">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="servo10_joint" type="fixed">
         <parent link="coxa4"/>
@@ -812,6 +899,9 @@
             <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo10">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="femur4_joint" type="revolute">
         <parent link="servo10"/>
@@ -839,6 +929,9 @@
              <origin xyz="-0.08 0 -0.0125"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="femur4">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="servo16_joint" type="revolute">
         <parent link="femur4"/>
@@ -866,6 +959,9 @@
             <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo16">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="tibia4_joint" type="fixed">
         <parent link="servo16"/>
@@ -891,6 +987,9 @@
             <origin xyz="-0.055 0 0.005"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="tibia4">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="shield4_joint" type="fixed">
         <parent link="tibia4"/>
@@ -916,6 +1015,9 @@
             <origin xyz="-0.055 -0.01 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="shield4">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <joint name="sensor4_joint" type="fixed">
         <parent link="tibia4"/>
@@ -941,6 +1043,9 @@
              <origin xyz="-0.0425 -0.005 -0.125"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="sensor4">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <!-- LEG 5 (LM) -->
 
@@ -970,6 +1075,9 @@
             <origin xyz="0 0 0.0025" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="coxa5">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="servo11_joint" type="fixed">
         <parent link="coxa5"/>
@@ -995,6 +1103,9 @@
             <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo11">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="femur5_joint" type="revolute">
         <parent link="servo11"/>
@@ -1022,6 +1133,9 @@
              <origin xyz="-0.08 0 -0.0125"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="femur5">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="servo17_joint" type="revolute">
         <parent link="femur5"/>
@@ -1049,6 +1163,9 @@
             <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo17">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="tibia5_joint" type="fixed">
         <parent link="servo17"/>
@@ -1074,6 +1191,9 @@
             <origin xyz="-0.055 0 0.005"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="tibia5">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="shield5_joint" type="fixed">
         <parent link="tibia5"/>
@@ -1099,6 +1219,9 @@
             <origin xyz="-0.055 -0.01 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="shield5">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <joint name="sensor5_joint" type="fixed">
         <parent link="tibia5"/>
@@ -1124,6 +1247,9 @@
              <origin xyz="-0.0425 -0.005 -0.125"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="sensor5">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <!-- LEG 6 (LF) -->
 
@@ -1153,6 +1279,9 @@
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="coxa6">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="servo12_joint" type="fixed">
         <parent link="coxa6"/>
@@ -1178,6 +1307,9 @@
             <origin xyz="0.045 0 0.0095" rpy="0 ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo12">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="femur6_joint" type="revolute">
         <parent link="servo12"/>
@@ -1205,6 +1337,9 @@
              <origin xyz="-0.08 0 -0.0125"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="femur6">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="servo18_joint" type="revolute">
         <parent link="femur6"/>
@@ -1232,6 +1367,9 @@
             <origin xyz="-0.008 0 0" rpy="${pi/2} ${pi/2} 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="servo18">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <joint name="tibia6_joint" type="fixed">
         <parent link="servo18"/>
@@ -1257,6 +1395,9 @@
             <origin xyz="-0.055 0 0.005"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="tibia6">
+        <material>Gazebo/White</material>
+    </gazebo>
     
     <joint name="shield6_joint" type="fixed">
         <parent link="tibia6"/>
@@ -1282,6 +1423,9 @@
             <origin xyz="-0.055 -0.01 0"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="shield6">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <joint name="sensor6_joint" type="fixed">
         <parent link="tibia6"/>
@@ -1307,6 +1451,9 @@
              <origin xyz="-0.0425 -0.005 -0.125"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="sensor6">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <!-- TOP -->
 
@@ -1334,6 +1481,9 @@
             <origin xyz="0 0 0.014"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="top_cover">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <joint name="phone_joint" type="fixed">
         <parent link="top_cover"/>
@@ -1359,6 +1509,9 @@
             <origin xyz="0 0 .024"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="phone">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
     <!-- BOTTOM -->
 
@@ -1386,6 +1539,9 @@
             <origin xyz="0 0 .0175"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="bottom_cover">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <joint name="batterybar1_joint" type="fixed">
         <parent link="bottom_cover"/>
@@ -1411,6 +1567,9 @@
             <origin xyz="0 0 .0175"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="batterybar1">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="batterybar2_joint" type="fixed">
         <parent link="bottom_cover"/>
@@ -1436,6 +1595,9 @@
             <origin xyz="0 -0.075 .0175"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="batterybar2">
+        <material>Gazebo/White</material>
+    </gazebo>
 
     <joint name="battery_joint" type="fixed">
         <parent link="bottom_cover"/>
@@ -1461,5 +1623,8 @@
             <origin xyz="0 0 -0.0225"/>
         </xacro:inertial_box>
     </link>
+    <gazebo reference="battery">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
 </robot>
