@@ -267,7 +267,7 @@
     <joint name="femur1_joint" type="revolute">
         <parent link="servo7"/>
         <child link="femur1"/>
-        <origin xyz="0.045 0 0.02" rpy="${pi/2} 0 ${pi}"/>
+        <origin xyz="0.045 0 0.02" rpy="${pi/2} ${pi/4} ${pi}"/>
         <axis xyz="0 0 1" />
         <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
     </joint>
@@ -294,7 +294,7 @@
     <joint name="servo13_joint" type="revolute">
         <parent link="femur1"/>
         <child link="servo13"/>
-        <origin xyz="-0.0775 0 0"/>
+        <origin xyz="-0.0775 0 0" rpy="0 0 ${pi/4}"/>
         <axis xyz="0 0 1" />
         <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
     </joint>
@@ -332,6 +332,65 @@
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+            <origin xyz="-0.055 0 0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_tibia.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.055 0 0.005"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="shield1_joint" type="fixed">
+        <parent link="tibia1"/>
+        <child link="shield1"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="shield1">
+        <visual>
+            <origin xyz="-0.055 0 0"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/shield.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.055 0 0"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/shield.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.055 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="sensor1_joint" type="fixed">
+        <parent link="tibia1"/>
+        <child link="sensor1"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="sensor1">
+        <visual>
+            <origin xyz="-0.0425 0.005 -0.125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/micro_switch_tip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.0425 0.005 -0.125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/micro_switch_tip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.0425 0.005 -0.125"/>
+        </xacro:inertial_box>
     </link>
 
     <!-- LEG 2 (RM) -->
@@ -391,7 +450,7 @@
     <joint name="femur2_joint" type="revolute">
         <parent link="servo8"/>
         <child link="femur2"/>
-        <origin xyz="0.045 0 0.02" rpy="${pi/2} 0 ${pi}"/>
+        <origin xyz="0.045 0 0.02" rpy="${pi/2} ${pi/4} ${pi}"/>
         <axis xyz="0 0 1" />
         <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
     </joint>
@@ -418,7 +477,7 @@
     <joint name="servo14_joint" type="revolute">
         <parent link="femur2"/>
         <child link="servo14"/>
-        <origin xyz="-0.0775 0 0"/>
+        <origin xyz="-0.0775 0 0" rpy="0 0 ${pi/4}"/>
         <axis xyz="0 0 1" />
         <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
     </joint>
@@ -456,6 +515,65 @@
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+            <origin xyz="-0.055 0 0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_tibia.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.055 0 0.005"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="shield2_joint" type="fixed">
+        <parent link="tibia2"/>
+        <child link="shield2"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="shield2">
+        <visual>
+            <origin xyz="-0.055 0 0"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/shield.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.055 0 0"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/shield.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="-0.055 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="sensor2_joint" type="fixed">
+        <parent link="tibia2"/>
+        <child link="sensor2"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="sensor2">
+        <visual>
+            <origin xyz="-0.0425 0.005 -0.125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/micro_switch_tip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.0425 0.005 -0.125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/micro_switch_tip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.0425 0.005 -0.125"/>
+        </xacro:inertial_box>
     </link>
 
     <!-- LEG 3 (RB) -->
@@ -515,7 +633,7 @@
     <joint name="femur3_joint" type="revolute">
         <parent link="servo9"/>
         <child link="femur3"/>
-        <origin xyz="0.045 0 0.02" rpy="${pi/2} 0 ${pi}"/>
+        <origin xyz="0.045 0 0.02" rpy="${pi/2} ${pi/4} ${pi}"/>
         <axis xyz="0 0 1" />
         <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
     </joint>
@@ -542,7 +660,7 @@
     <joint name="servo15_joint" type="revolute">
         <parent link="femur3"/>
         <child link="servo15"/>
-        <origin xyz="-0.0775 0 0"/>
+        <origin xyz="-0.0775 0 0" rpy="0 0 ${pi/4}"/>
         <axis xyz="0 0 1" />
         <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
     </joint>
@@ -580,6 +698,65 @@
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+            <origin xyz="-0.055 0 0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/right_tibia.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="-0.055 0 0.005"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="shield3_joint" type="fixed">
+        <parent link="tibia3"/>
+        <child link="shield3"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="shield3">
+        <visual>
+            <origin xyz="-0.055 0 0"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/shield.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.055 0 0"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/shield.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="-0.055 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="sensor3_joint" type="fixed">
+        <parent link="tibia3"/>
+        <child link="sensor3"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="sensor3">
+        <visual>
+            <origin xyz="-0.0425 0.005 -0.125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/micro_switch_tip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.0425 0.005 -0.125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/micro_switch_tip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.0425 0.005 -0.125"/>
+        </xacro:inertial_box>
     </link>
 
     <!-- LEG 4 (LB) -->
@@ -639,7 +816,7 @@
     <joint name="femur4_joint" type="revolute">
         <parent link="servo10"/>
         <child link="femur4"/>
-        <origin xyz="0.045 0 0.02" rpy="${pi/2} 0 ${pi}"/>
+        <origin xyz="0.045 0 0.02" rpy="${pi/2} ${pi/4} ${pi}"/>
         <axis xyz="0 0 1" />
         <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
     </joint>
@@ -666,7 +843,7 @@
     <joint name="servo16_joint" type="revolute">
         <parent link="femur4"/>
         <child link="servo16"/>
-        <origin xyz="-0.0775 0 0"/>
+        <origin xyz="-0.0775 0 0" rpy="0 0 ${pi/4}"/>
         <axis xyz="0 0 1" />
         <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
     </joint>
@@ -704,6 +881,65 @@
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+            <origin xyz="-0.055 0 0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_tibia.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="-0.055 0 0.005"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="shield4_joint" type="fixed">
+        <parent link="tibia4"/>
+        <child link="shield4"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="shield4">
+        <visual>
+            <origin xyz="-0.055 -0.01 0"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/shield.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.055 -0.01 0"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/shield.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="-0.055 -0.01 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="sensor4_joint" type="fixed">
+        <parent link="tibia4"/>
+        <child link="sensor4"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="sensor4">
+        <visual>
+            <origin xyz="-0.0425 -0.005 -0.125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/micro_switch_tip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.0425 -0.005 -0.125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/micro_switch_tip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.0425 -0.005 -0.125"/>
+        </xacro:inertial_box>
     </link>
 
     <!-- LEG 5 (LM) -->
@@ -763,7 +999,7 @@
     <joint name="femur5_joint" type="revolute">
         <parent link="servo11"/>
         <child link="femur5"/>
-        <origin xyz="0.045 0 0.02" rpy="${pi/2} 0 ${pi}"/>
+        <origin xyz="0.045 0 0.02" rpy="${pi/2} ${pi/4} ${pi}"/>
         <axis xyz="0 0 1" />
         <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
     </joint>
@@ -790,7 +1026,7 @@
     <joint name="servo17_joint" type="revolute">
         <parent link="femur5"/>
         <child link="servo17"/>
-        <origin xyz="-0.0775 0 0"/>
+        <origin xyz="-0.0775 0 0" rpy="0 0 ${pi/4}"/>
         <axis xyz="0 0 1" />
         <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
     </joint>
@@ -828,6 +1064,65 @@
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+            <origin xyz="-0.055 0 0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_tibia.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="-0.055 0 0.005"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="shield5_joint" type="fixed">
+        <parent link="tibia5"/>
+        <child link="shield5"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="shield5">
+        <visual>
+            <origin xyz="-0.055 -0.01 0"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/shield.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.055 -0.01 0"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/shield.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="-0.055 -0.01 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="sensor5_joint" type="fixed">
+        <parent link="tibia5"/>
+        <child link="sensor5"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="sensor5">
+        <visual>
+            <origin xyz="-0.0425 -0.005 -0.125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/micro_switch_tip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.0425 -0.005 -0.125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/micro_switch_tip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.0425 -0.005 -0.125"/>
+        </xacro:inertial_box>
     </link>
 
     <!-- LEG 6 (LF) -->
@@ -887,7 +1182,7 @@
     <joint name="femur6_joint" type="revolute">
         <parent link="servo12"/>
         <child link="femur6"/>
-        <origin xyz="0.045 0 0.02" rpy="${pi/2} 0 ${pi}"/>
+        <origin xyz="0.045 0 0.02" rpy="${pi/2} ${pi/4} ${pi}"/>
         <axis xyz="0 0 1" />
         <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
     </joint>
@@ -914,7 +1209,7 @@
     <joint name="servo18_joint" type="revolute">
         <parent link="femur6"/>
         <child link="servo18"/>
-        <origin xyz="-0.0775 0 0"/>
+        <origin xyz="-0.0775 0 0" rpy="0 0 ${pi/4}"/>
         <axis xyz="0 0 1" />
         <limit lower="-0.785398" upper="0.785398" effort="0.8825985000000001" velocity="1.0"/>
     </joint>
@@ -952,6 +1247,65 @@
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+            <origin xyz="-0.055 0 0.005"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/left_tibia.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="-0.055 0 0.005"/>
+        </xacro:inertial_box>
+    </link>
+    
+    <joint name="shield6_joint" type="fixed">
+        <parent link="tibia6"/>
+        <child link="shield6"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="shield6">
+        <visual>
+            <origin xyz="-0.055 -0.01 0"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/shield.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.055 -0.01 0"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/shield.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+            <origin xyz="-0.055 -0.01 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="sensor6_joint" type="fixed">
+        <parent link="tibia6"/>
+        <child link="sensor6"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="sensor6">
+        <visual>
+            <origin xyz="-0.0425 -0.005 -0.125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/micro_switch_tip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="-0.0425 -0.005 -0.125"/>
+            <geometry>
+                <mesh filename="file://$(find hexapod)/meshes/micro_switch_tip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.015" x="0.01" y="0.01" z="0.01">
+             <origin xyz="-0.0425 -0.005 -0.125"/>
+        </xacro:inertial_box>
     </link>
 
     <!-- TOP -->
